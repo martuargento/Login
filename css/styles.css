@@ -1,0 +1,229 @@
+  /* importamos la fuente poppins de google fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root{
+    --color-amarillo: #ffcc7e;
+    --color-background: #d2cecb;
+    --color-hover: #f0f0f0;
+}
+/* Reseteamos todos los estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* En el body utilizamos display:flex, align-items: center; justify-content:center */
+/* para alinear el contenido al centro, tanto horizontal como vertical */
+/* poniendo estos parametros se centra bien horizontalmente, pero no vertical */
+/* para que termine de funcionar tenemos que poner height: 100vh */
+/* para indicar que la altura sea del 100% del viewport, es decir toda la pantalla */
+/* puesto esto ahora si el contenido del body ira al centro de la pantalla verticalmente */
+body{
+    font-family: poppins;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--color-background);
+}
+
+.container{
+    margin-top: 150px;
+}
+
+.container-login{
+    background-color: #fff;
+    padding: 45px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 550px; 
+}
+
+.container-login h1{
+    text-align: center; 
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.container-login h2{
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: none;
+    font-family: inherit;
+    /* al poner inherit, decimos que sea heredado, como el body tiene poppins */
+    /* tambien se aplicara al input, ya que le dijimos que lo herede */
+    border: 2px solid #eee;
+    font-size: 15px;
+    color: #000;  
+}
+
+/* con input:focus ponemos todo lo que queremos que haga cuando el usuario haga click */
+/* para escribir en el input */
+
+input:focus{
+    outline: none;
+    /* con outline: none; le sacamos el borde negro que se pone automaticamente */
+    /* cuando hacemos click para escribir */
+    border: 2px solid #55c57a
+    /* le ponemos un borde de color verde cuando hace click */
+    /* si no hubiesemos puesto ouline: none, es  te color que pusimos se veria mas oscuro */
+    /* ya que se mezclaria con el negro que automaticamente se pone */
+    
+}
+
+/* con input:focus:invalid ponemos todo lo que queremos que haga cuando el usuario */
+/* escriba algo que no esta permitido, por ejemplo un correo sin @ */
+/* o una contraseña invalida */
+/* se mostrara esto mientras lo que esta escrito no sea correcto, o no este validado */
+input:focus:invalid{
+    outline: none;
+    border: 2px solid #ff7730
+}
+
+/* con input::-webkit-input-placeholder podemos modificar todo lo que es el placeholder */
+/* del input */
+input::-webkit-input-placeholder{
+    color: #878b8b;
+    font-weight: 500;
+}
+
+/* Podriamos poner una clase en el primer input donde se pone el email */
+/* y a esa clase ponerle la propiedad que vamos a poner abajo (margin-bottom: 15px) */
+/* pero lo hacemos de la siguiente forma como para aprender otro concepto */
+
+/* cuando ponemos input: not(), estamos diciendo que se aplique a todos los input */
+/* menos.... al que le pongamos adentro */
+/* cuando ponemos input:not(:last-child) estamos diciendo que aplique a todos los input */
+/* menos al ultimo hijo */
+input:not(:last-child){
+     margin-bottom: 15px;
+}
+/* como en el ejemplo hay dos input, hijos del <form class="container-login"> */
+
+.input-password{
+    position: relative;
+    /* ponemos este div en position:relative, que luego en conjunto con que le vamos */
+    /* a poner position:absolute a el boton donde estan los dos iconos */
+    /* de mostrar y ocultar contraseña, para moverlos a la posicion donde queremos que esten */
+}
+
+.btn-hide-show{
+    position:absolute;
+    /* la posicion absoluta, podremos mover a nuestro antojo con top, right,etc */
+    /* y siempre se moveran de acuerdo al contenedor padre */
+    /* es decir que si ponemos top: 0, estara en la parte mas alta, de su contenedor padre */
+    top: 0;
+    right: 0;
+    height: 100%;
+    border: none;
+    background: none;
+    padding: 0 20px;
+    /* le damos un padding de 0 arriba y abajo, y 20 px a los costados */
+    cursor: pointer;
+}
+
+#show-password{
+    display: none;
+}
+
+
+.parrafo-1{
+    font-weight: 500;
+    font-size: 14px;
+    margin-top:20px;
+    margin-bottom: 30px;
+}
+
+.btn-sign-in{
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    background-color: var(--color-amarillo);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 16px;
+
+}
+
+.parrafo-2{
+    font-weight: 500;
+    font-size: 14px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.container-btn-login-with{
+    display:flex;
+    gap: 10px;
+
+}
+
+.btn-login-with{
+    flex: 1;
+    /* con flex: 1; crecen todos de forma uniforme, del mismo tamaño los botones */
+    border: 1px solid #eee;
+    background: none;
+    padding: 15px;
+    font-weight: 900;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* display: flex, justify-content: center y align-items: center los usamos para */
+    /* centrar las letras que quedaban mas abajo que los iconos */
+
+}
+
+.btn-login-with:hover{
+    background-color: var(--color-hover);
+
+}
+
+.btn-login-with i{
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+
+.create-account{
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 500;
+}
+
+.create-account a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+}
+
+.footer{
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+/* para los iconos trabajamos con fontawesome.com*/
+/* donde nos registramos y pegamos el codigo que puse en el html */
+/* este: <script src="https://kit.fontawesome.com/e808169f4d.js" crossorigin="anonymous"></script>   */
+/* luego de eso en la pagina podemos buscar cualquier icono que queremos, copiamos el codigo */
+/* y lo insertamos en el html*/
+
+

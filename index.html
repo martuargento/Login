@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <form class="container-login">
+            <h1>Login</h1>
+            <h2>Hey, Ingresa tus datos para iniciar sesión en tu cuenta</h2>
+            <input type="email" placeholder="Correo electrónico">
+            <!-- par poner un input, y decir de que tipo es rapidamente -->
+            <!-- ponemos input:email, y se completa solo -->
+            <!-- otro ejemplo seria: input:checkbox -->
+            <!-- etc -->
+            <div class="input-password">
+                <input type="password" placeholder="Contraseña" id="ingresodecontraseña">
+                <button class="btn-hide-show">
+                    <i id="show-password" class="fa-solid fa-eye"></i><i id="hide-password" class="fa-solid fa-eye-slash"></i>
+                    <!-- insertamos los iconos que sacamos de fontawesome.com -->
+                    <!-- al primero le insertamos el id show-password que usaremos en JavaScript -->
+                    <!-- al segundo le insertamos el id hide-password que usaremos en JavaScript -->
+                </button>
+            </div>
+
+            <p class="parrafo-1">¿Tienes problemas para iniciar sesión?</p>
+
+            <button type="submit" class="btn-sign-in">
+                Iniciar sesión                
+            </button>
+            <!-- para poner este boton con el tipo de boton y clase directamente -->
+            <!-- puse button:submit.btn-sign-in -->
+            <!-- es una forma abreviada, la sintaxis es: -->
+            <!-- boton:tipo.clase -->
+        
+            <p class="parrafo-2">
+                - O inicia sesión con -
+            </p>
+
+            <div class="container-btn-login-with">
+                <button class="btn-login-with">
+                    <i class="fa-brands fa-google"></i> Google
+                    <!-- pegamos el codigo del icono, que sacamos de fontawesome.com -->
+                </button>
+
+                <button class="btn-login-with">
+                    <i class="fa-brands fa-apple"></i> Apple ID
+                    <!-- pegamos el codigo del icono, que sacamos de fontawesome.com -->
+                </button>
+
+                <button class="btn-login-with">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                    <!-- pegamos el codigo del icono, que sacamos de fontawesome.com -->
+                </button>
+            </div>
+
+            <p class="create-account">
+                ¿No tienes una cuenta?  <a href="#">Regístrate ahora</a>
+            </p>
+        </form>
+
+        <div class="footer">
+            Copyright &copy; 2023 | Politica de Privacidad
+        </div>
+        <!-- con el &copy; hacemos el simbolo de Copyright -->
+    </div>
+
+
+
+<script src="https://kit.fontawesome.com/e808169f4d.js" crossorigin="anonymous"></script>   
+<script src="js/app.js"></script>    
+</body>
+</html>
