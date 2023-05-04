@@ -30,7 +30,7 @@ body{
 }
 
 .container{
-    margin-top: 150px;
+    margin-top: 50vh;
 }
 
 .container-login{
@@ -87,15 +87,15 @@ input:focus{
 /* escriba algo que no esta permitido, por ejemplo un correo sin @ */
 /* o una contraseña invalida */
 /* se mostrara esto mientras lo que esta escrito no sea correcto, o no este validado */
-input:focus:invalid{
+input:focus:invalid{ 
     outline: none;
-    border: 2px solid #ff7730
+    border: 2px solid #ff7730;
 }
 
 /* con input::-webkit-input-placeholder podemos modificar todo lo que es el placeholder */
 /* del input */
 input::-webkit-input-placeholder{
-    color: #878b8b;
+    color: #878b90;
     font-weight: 500;
 }
 
@@ -134,7 +134,7 @@ input:not(:last-child){
     cursor: pointer;
 }
 
-#show-password{
+#hide-password{
     display: none;
 }
 
@@ -169,7 +169,6 @@ input:not(:last-child){
 .container-btn-login-with{
     display:flex;
     gap: 10px;
-
 }
 
 .btn-login-with{
